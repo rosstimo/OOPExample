@@ -2,9 +2,15 @@
 Module OOPExample
 
     Sub Main()
+        'Constructor
         Dim scruffy As New Dog
-        Console.WriteLine(scruffy.Move())
-        Console.WriteLine(scruffy.skinType())
+        'Console.WriteLine(scruffy.Move())
+        'Console.WriteLine(scruffy.skinType())
+
+        Dim polly As New Parrot
+        Console.WriteLine(polly.Move)
+        Console.WriteLine(polly.Speak)
+
         Console.Read()
     End Sub
 
@@ -21,7 +27,7 @@ Module OOPExample
         End Property
 
         Public Function Move() As String
-            Return ""
+            Return "Animals move... Well not sponges..."
         End Function
 
     End Class
@@ -48,7 +54,6 @@ Module OOPExample
     Class Dog
         Inherits Mammal
         'Properties
-        Private _skinType As String
 
         'Fields
 
@@ -72,6 +77,11 @@ Module OOPExample
         Public Shadows Function Move() As String
             Return "Ok, who left the window open?"
         End Function
+
+        Public Shadows Function Speak() As String
+            Return "Stick 'em up!"
+        End Function
+
     End Class
 
     Class Lion
