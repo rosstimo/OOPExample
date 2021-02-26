@@ -8,9 +8,12 @@ Module OOPExample
         'Console.WriteLine(scruffy.skinType())
 
         Dim polly As New Parrot
-        Console.WriteLine(polly.Move)
-        Console.WriteLine(polly.Speak)
+        'Console.WriteLine(polly.Move)
+        'Console.WriteLine(polly.Speak)
 
+        Dim sly As New Fox
+        Console.WriteLine("What does the fox say?")
+        Console.WriteLine(sly.Speak)
         Console.Read()
     End Sub
 
@@ -30,6 +33,9 @@ Module OOPExample
             Return "Animals move... Well not sponges..."
         End Function
 
+        Public Function Speak() As String
+            Return "Animals make sounds... Well not sponges..."
+        End Function
     End Class
 
     Class Mammal
@@ -90,6 +96,16 @@ Module OOPExample
 
     Class Duck
         Inherits Bird
+    End Class
+
+    Class Fox
+        Inherits Dog
+        Public Shadows Function Speak() As String
+            Return "Ring-ding-ding-ding-dingeringeding!" & vbNewLine _
+                   & "Gering-ding - ding - ding - dingeringeding!" & vbNewLine _
+                   & "Gering-ding - ding - ding - dingeringeding!"
+        End Function
+
     End Class
 
 End Module
