@@ -108,6 +108,7 @@ Module OOPExample
         Public Shadows Function speak() As String
             Return "Pretty Bird...."
         End Function
+
     End Class
 
     Class Lion
