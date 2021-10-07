@@ -1,24 +1,43 @@
-﻿Imports System.Windows.Forms
+﻿
 Module OOPExample
 
     Sub Main()
         'Constructor
         Dim scruffy As New Dog
+        Dim pepe As New Chihuahua
+
+
+
         'Console.WriteLine(scruffy.Move())
         'Console.WriteLine(scruffy.skinType())
+        'Console.WriteLine(scruffy.Speak())
+
+        'Console.WriteLine(pepe.Move())
+        'pepe.skinType = "A hairless little rat!"
+        'Console.WriteLine(pepe.skinType())
+        'Console.WriteLine(pepe.Speak())
+        'Console.WriteLine(scruffy.skinType())
+
+        Dim jim As New Animal
+        Console.WriteLine(jim.Move)
+        Console.WriteLine(jim.Speak)
+
+        Dim bob As New Bird
+        Console.WriteLine(bob.Move)
+        Console.WriteLine(bob.Speak)
 
         Dim polly As New Parrot
-        'Console.WriteLine(polly.Move)
-        'Console.WriteLine(polly.Speak)
+        Console.WriteLine(polly.Move)
+        Console.WriteLine(polly.speak)
 
-        Dim sly As New Fox
-        Console.WriteLine("What does the fox say?")
-        Console.WriteLine(sly.Speak)
+        'Dim sly As New Fox
+        'Console.WriteLine("What does the fox say?")
+        'Console.WriteLine(sly.Speak)
         Console.Read()
     End Sub
 
     Class Animal
-
+        'fields
         Private _skinType As String
         Public Overridable Property skinType As String
             Get
@@ -29,6 +48,7 @@ Module OOPExample
             End Set
         End Property
 
+        'Methods
         Public Function Move() As String
             Return "Animals move... Well not sponges..."
         End Function
@@ -48,6 +68,7 @@ Module OOPExample
         Public Shadows Function Move() As String
             Return "Walking on all fours"
         End Function
+
     End Class
 
     Class Bird
@@ -137,5 +158,13 @@ Module OOPExample
         End Function
 
     End Class
+
+    Class Chihuahua
+        Inherits Dog
+        Public Shadows Function Speak() As String
+            Return "yip! yip! yip! yip! yip! yip! yip!"
+        End Function
+    End Class
+
 
 End Module
